@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Suplier;
 use App\Models\Barang;
+use DB;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -12,6 +13,10 @@ class BarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $barang = Barang::with('suplier')->get();;
@@ -53,7 +58,7 @@ class BarangController extends Controller
         if ($request->hasFile('cover')) {
             $image = $request->file('cover');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
-            $image->move('images/barangs/', $name);
+            $image->move('image/barang/', $name);
             $barang->cover = $name;
         }
         $barang->id_suplier = $request->id_suplier;
@@ -99,6 +104,7 @@ class BarangController extends Controller
             'nama' => 'required',
             'harga' => 'required',
             'stok' => 'required',
+            'id_suplier' => 'required',
         ]);
 
         $barang = Barang::findOrFail($id);
@@ -109,9 +115,10 @@ class BarangController extends Controller
         if ($request->hasFile('cover')) {
             $image = $request->file('cover');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
-            $image->move('images/barangs/', $name);
+            $image->move('image/barang/', $name);
             $barang->cover = $name;
         }
+        $barang->id_suplier = $request->id_suplier;
         $barang->save();
         return redirect()->route('barang.index');
     }
@@ -125,6 +132,7 @@ class BarangController extends Controller
     public function destroy($id)
     {
         $barang = Barang::findOrFail($id);
+        $barang->deleteImage();
         $barang->delete();
         return redirect()->route('barang.index');
     }

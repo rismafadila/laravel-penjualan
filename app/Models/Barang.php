@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
     use HasFactory;
-    protected $visible =['nama','id_suplier','harga','stok'];
-    protected $fillable =['nama','id_suplier','harga','stok'];
+    protected $visible =['nama','id_suplier','harga','stok', 'cover'];
+    protected $fillable =['nama','id_suplier','harga','stok', 'cover'];
     public $timestamps = true;
 
     public function suplier(){
@@ -26,17 +26,17 @@ class Barang extends Model
     }
     public function image()
     {
-        if ($this->cover && file_exists(public_path('images/barangs/' . $this->cover))) {
-            return asset('images/barangs/' . $this->cover);
+        if ($this->cover && file_exists(public_path('image/barang/' . $this->cover))) {
+            return asset('image/barang/' . $this->cover);
         } else {
-            return asset('images/no_image.png');
+            return asset('image/no_image.png');
         }
     }
 
     public function deleteImage()
     {
-        if ($this->cover && file_exists(public_path('images/barangs/' . $this->cover))) {
-            return unlink(public_path('images/barangs/' . $this->cover));
+        if ($this->cover && file_exists(public_path('image/barang/' . $this->cover))) {
+            return unlink(public_path('image/barang/' . $this->cover));
         }
 
     }
