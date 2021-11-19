@@ -15,9 +15,11 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
+            $table->string('kode');
             $table->bigInteger('id_barang')->unsigned();
-            $table->bigInteger('jumlah');
-            $table->string('bayar');
+            $table->bigInteger('harga');
+            $table->string('qty');
+            $table->date('tanggal');
             $table->foreign('id_barang')->references('id')
             ->on('barangs')->onUpdate('cascade')
             ->onDelete('cascade');

@@ -8,7 +8,15 @@
                 <div class="card-body">
                    <form action="{{route('transaksi.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
-
+                        <div class="form-group">
+                            <label for="">Kode</label>
+                            <input type="text" name="kode" class="form-control @error('kode') is-invalid @enderror">
+                             @error('kode')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                         <div class="form-group">
                             <label for="">Nama Barang</label>
                             <select name="id_barang" class="form-control @error('id_barang') is-invalid @enderror" >
@@ -23,18 +31,27 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">jumlah</label>
-                            <input type="number" name="jumlah" class="form-control @error('jumlah') is-invalid @enderror">
-                             @error('jumlah')
+                            <label for="">Harga</label>
+                            <input type="number" name="harga" class="form-control @error('harga') is-invalid @enderror">
+                             @error('harga')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Bayar</label>
-                            <input type="number" name="bayar" class="form-control @error('bayar') is-invalid @enderror">
-                             @error('bayar')
+                            <label for="">Qty</label>
+                            <input type="number" name="qty" class="form-control @error('qty') is-invalid @enderror">
+                             @error('qty')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tanggal</label>
+                            <input type="date" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror">
+                             @error('tanggal')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

@@ -13,9 +13,11 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Kode</th>
                         <th>Nama Barang</th>
-                        <th>Jumlah</th>
                         <th>Harga</th>
+                        <th>Qty</th>
+                        <th>Tanggal</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -24,9 +26,11 @@
                     @foreach ($transaksi as $data)
                     <tr>
                         <td>{{ $no++ }}</td>
+                        <td>{{ $data->kode }}</td>
                         <td>{{ $data->barang->nama }}</td>
-                        <td>{{ $data->jumlah }}</td>
-                        <td>{{ $data->bayar }}</td>
+                        <td>{{ $data->harga }}</td>
+                        <td>{{ $data->qty }}</td>
+                        <td>{{ $data->tanggal }}</td>
 
                         <td>
                             <form action="{{route('transaksi.destroy',$data->id)}}" method="post">

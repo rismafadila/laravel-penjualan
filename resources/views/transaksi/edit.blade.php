@@ -10,7 +10,15 @@
                    <form action="{{route('transaksi.update',$transaksi->id)}}" method="post">
                         @csrf
                         @method('put')
-
+                        <div class="form-group">
+                            <label for="">Kode</label>
+                            <input type="text" name="kode" value="{{$transaksi->kode}}" class="form-control @error('kode') is-invalid @enderror">
+                             @error('kode')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                         <div class="form-group">
                             <label for="">Nama Barang</label>
                             <select name="id_barang" class="form-control @error('id_barang') is-invalid @enderror" >
@@ -25,24 +33,32 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Jumlah</label>
-                            <input type="number" name="jumlah" value="{{$transaksi->jumlah}}" class="form-control @error('jumlah') is-invalid @enderror">
-                             @error('jumlah')
+                            <label for="">Harga</label>
+                            <input type="number" name="harga" value="{{$transaksi->harga}}" class="form-control @error('harga') is-invalid @enderror">
+                             @error('harga')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Bayar</label>
-                            <input type="number" name="bayar" value="{{$transaksi->bayar}}" class="form-control @error('bayar') is-invalid @enderror">
-                             @error('bayar')
+                            <label for="">Qty</label>
+                            <input type="number" name="qty" value="{{$transaksi->qty}}" class="form-control @error('qty') is-invalid @enderror">
+                             @error('qty')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-
+                        <div class="form-group">
+                            <label for="">Tanggal</label>
+                            <input type="date" name="tanggal" value="{{$transaksi->tanggal}}" class="form-control @error('tanggal') is-invalid @enderror">
+                             @error('tanggal')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
 
                         <div class="form-group">
                             <button type="reset" class="btn btn-warning">Reset</button>

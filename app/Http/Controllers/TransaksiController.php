@@ -43,16 +43,19 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
+            'kode' => 'required',
             'id_barang' => 'required',
-            'jumlah' => 'required',
-            'bayar' => 'required',
+            'harga' => 'required',
+            'qty' => 'required',
+            'tanggal' => 'required',
         ]);
 
         $transaksi = new Transaksi;
+        $transaksi->kode = $request->kode;
         $transaksi->id_barang = $request->id_barang;
-        $transaksi->jumlah = $request->jumlah;
-        $transaksi->bayar = $request->bayar;
+        $transaksi->harga = $request->harga;
+        $transaksi->qty = $request->qty;
+        $transaksi->tanggal = $request->tanggal;
         $transaksi->save();
         return redirect()->route('transaksi.index');
     }
@@ -93,13 +96,17 @@ class TransaksiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'jumlah' => 'required',
-            'bayar' => 'required',
+            'kode' => 'required',
+            'harga' => 'required',
+            'qty' => 'required',
+            'tanggal' => 'required',
         ]);
 
         $transaksi = Transaksi::findOrFail($id);
-        $transaksi->jumlah = $request->jumlah;
-        $transaksi->bayar = $request->bayar;
+        $transaksi->kode = $request->kode;
+        $transaksi->harga = $request->harga;
+        $transaksi->qty = $request->qty;
+        $transaksi->tanggal = $request->tanggal;
         $transaksi->save();
         return redirect()->route('transaksi.index');
     }

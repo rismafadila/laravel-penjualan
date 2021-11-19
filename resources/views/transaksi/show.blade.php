@@ -7,16 +7,24 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
+                        <label for=""> Kode</label>
+                        <input type="text" name="kode" value="{{$transaksi->kode}}" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
                         <label for=""> Nama Barang</label>
                         <input type="text" name="nama" value="{{ $transaksi->barang->nama }}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for=""> Jumlah</label>
-                        <input type="text" name="jumlah" value="{{$transaksi->jumlah}}" class="form-control" readonly>
+                        <label for=""> Harga</label>
+                        <input type="number" name="harga" value="{{$transaksi->harga}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for=""> Bayar</label>
-                        <input type="text" name="bayar" value="{{$transaksi->bayar}}" class="form-control" readonly>
+                        <label for=""> Qty</label>
+                        <input type="text" name="qty" value="{{$transaksi->qty}}" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for=""> Tanggal</label>
+                        <input type="text" name="tanggal" value="{{$transaksi->tanggal}}" class="form-control" readonly>
                     </div>
 
                     <div class="form-group">
