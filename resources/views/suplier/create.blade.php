@@ -75,6 +75,15 @@
                                             </span>
                                         @enderror
                                     </div>
+                                    <div class="form-group">
+                                        <label for="">Alamat</label>
+                                        <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror">
+                                         @error('alamat')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
 
                                     </div>
                                     <div class="form-group">

@@ -69,6 +69,10 @@
                                     <input type="text" name="nama" value="{{$barang->nama}}" class="form-control" readonly>
                                 </div>
                                 <div class="form-group">
+                                    <label for=""> Nama Supplier</label>
+                                    <input type="text" name="nama" value="{{ $barang->suplier->nama }}" class="form-control" readonly>
+                                </div>
+                                <div class="form-group">
                                     <label for=""> Harga</label>
                                     <input type="text" name="harga" value="{{$barang->harga}}" class="form-control" readonly>
                                 </div>

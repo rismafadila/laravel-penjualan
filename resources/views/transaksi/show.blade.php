@@ -64,7 +64,10 @@
                     <div class="col-md-10">
                         <div class="card">
                             <div class="card-body">
-
+                                <div class="form-group">
+                                    <label for=""> Nama Barang</label>
+                                    <input type="text" name="nama" value="{{ $transaksi->barang->nama }}" class="form-control" readonly>
+                                </div>
                                 <div class="form-group">
                                     <label for=""> Jumlah</label>
                                     <input type="text" name="jumlah" value="{{$transaksi->jumlah}}" class="form-control" readonly>

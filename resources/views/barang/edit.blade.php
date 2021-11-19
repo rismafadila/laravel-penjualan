@@ -109,8 +109,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Foto Baju</label> <br>
-                                        <img src="{{$barang->image()}}" alt="" style="width:150px; height:150px;" alt="Cover">
-                                        <input type="file" name="cover">
+                                        <img src="{{ $barang->image() }}" height="75" style="padding:10px;" />
+                            <input type="file" name="cover" value="{{$barang->cover}}" class="form-control ">
                                     </div>
                                     <div class="form-group">
                                         <button type="reset" class="btn btn-warning">Reset</button>

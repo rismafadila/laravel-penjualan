@@ -73,6 +73,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Suplier</th>
+                                    <th>Alamat</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -82,6 +83,7 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $data->nama }}</td>
+                                    <td>{{ $data->alamat }}</td>
                                     <td>
                                         <form action="{{route('suplier.destroy',$data->id)}}" method="post">
                                             @method('delete')

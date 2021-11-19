@@ -95,7 +95,7 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
+        $request->validate([
             'nama' => 'required',
             'harga' => 'required',
             'stok' => 'required',
@@ -107,11 +107,10 @@ class BarangController extends Controller
         $barang->stok = $request->stok;
 
         if ($request->hasFile('cover')) {
-            $barang->deleteImage();
             $image = $request->file('cover');
-            $nama = rand(1000, 9999) . $image->getClientOriginalName();
-            $image->move('images/barangs/', $nama);
-            $barang->cover = $nama;
+            $name = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('images/barangs/', $name);
+            $barang->cover = $name;
         }
         $barang->save();
         return redirect()->route('barang.index');

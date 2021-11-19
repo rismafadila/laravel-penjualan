@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>Home</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -40,6 +40,16 @@
             line-height: 25px;
             margin-left: 10%;
             margin-right: 30%;
+
+        }
+        footer {
+            border: 1px solid #0e0d0d;
+  background-color:#0e0d0d ;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-top: 25%;
+  width: 100%;
+
         }
     </style>
     <body>
@@ -56,6 +66,7 @@
             @include('layouts.bagian.sidebar')
             {{-- End Sidebar --}}
 
+
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row">
@@ -67,6 +78,7 @@
                     <!-- /.row -->
 
             {{-- Content --}}
+
             <section class="about">
                 <div class="container">
                     <i><p>
@@ -82,7 +94,14 @@
                 </div>
             </section>
             {{-- end Content --}}
-
+            <footer>
+                <div class="container">
+                    <strong><center>Copyright &copy; 2021
+                        <a href="https://instagram.com/oclo.official">Oclo Official.</a>
+                        All Right Reserved
+                    </center></strong>
+                </div>
+            </footer>
                 </div>
                 <!-- /.container-fluid -->
             </div>

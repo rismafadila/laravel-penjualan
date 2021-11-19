@@ -23,6 +23,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('barang', BarangController::class);
-Route::resource('suplier', SuplierController::class);
-Route::resource('transaksi', TransaksiController::class);
+Route::group(['prefix'=>'oclo','middleware' => ['auth']], function () {
+    Route::get('/', function(){
+        return view('layouts.admin');
+    });
+    Route::resource('barang', BarangController::class);
+    Route::resource('suplier', SuplierController::class);
+    Route::resource('transaksi', TransaksiController::class);
+});

@@ -39,10 +39,12 @@ class SuplierController extends Controller
         // validasi data
         $validated = $request->validate([
             'nama' => 'required',
+            'alamat' => 'required',
         ]);
 
         $suplier = new Suplier;
         $suplier->nama = $request->nama;
+        $suplier->alamat = $request->alamat;
         $suplier->save();
         return redirect()->route('suplier.index');
     }
@@ -84,10 +86,12 @@ class SuplierController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required',
+            'alamat' => 'required',
         ]);
 
         $suplier = Suplier::findOrFail($id);
         $suplier->nama = $request->nama;
+        $suplier->alamat = $request->alamat;
         $suplier->save();
         return redirect()->route('suplier.index');
     }
