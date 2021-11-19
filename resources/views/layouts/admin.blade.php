@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Barang</title>
+        <title>Home</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -34,6 +34,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+
     <body>
 
         <div id="wrapper">
@@ -52,7 +53,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Data Barang</h1>
+                            <h1 class="page-header">Oclo Official</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>

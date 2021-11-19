@@ -3,8 +3,8 @@
 @section('content')
 <div class="panel panel-default">
     <div class="panel-heading">
-        Transaksi Baju
-        <a href="{{route('transaksi.create')}}" class="btn btn-sm btn-primary float-right">Tambah Transaksi</a>
+
+        <a href="{{route('transaksi.create')}}" class="btn btn-sm btn-primary float-right">Tambah Data Transaksi</a>
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">

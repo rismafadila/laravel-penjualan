@@ -31,3 +31,5 @@ Route::group(['prefix'=>'oclo','middleware' => ['auth']], function () {
     Route::resource('suplier', SuplierController::class);
     Route::resource('transaksi', TransaksiController::class);
 });
+
+
