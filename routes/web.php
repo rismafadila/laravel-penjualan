@@ -32,4 +32,6 @@ Route::group(['prefix'=>'oclo','middleware' => ['auth']], function () {
     Route::resource('transaksi', TransaksiController::class);
 });
 
-
+Route::get('/kategori', function () {
+    return view('frontend.index');
+});
